@@ -1,0 +1,196 @@
+<apex:page showHeader="false" controller="TestLightningDesignController">
+     
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS201, 'assets/styles/salesforce-lightning-design-system.css')}" />
+     
+    <!-- REQUIRED SLDS WRAPPER -->
+    <apex:form >
+        <div class="slds" id="sldsMain">
+            <div class="slds-grid slds-page-header__detail-row ">
+                <div class="slds-col--padded slds-size--1-of-6" />
+                <div class="slds-col--padded slds-size--4-of-6">
+                    <dl>
+                        <dd>
+                            <apex:outputPanel rendered="{!!readOnly}">
+                                <div class="slds-modal__header">
+                                    <p class="slds-text-heading--medium slds-m-bottom--small">Create Account</p>
+                                </div>
+                            </apex:outputPanel>
+                             
+                            <apex:outputPanel rendered="{!readOnly}">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-avatar slds-avatar--large">
+                                      <img src="{!URLFOR($Resource.SLDS201, 'assets/images/avatar1.jpg')}" alt="portrait" />
+                                    </span>
+                                    </div>
+                                     
+                                    <div class="slds-media__body">
+                                    <p class="slds-text-heading--label">Account</p>
+                                    <h1 class="slds-text-heading--medium">{!acc.Name}</h1>
+                                </div>
+                            </div>
+                            </apex:outputPanel>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="slds-col--padded slds-size--1-of-6" />
+            </div>
+             
+            <!-- PAGE HEADER DETAIL ROW -->
+            <apex:outputPanel rendered="{!!readOnly}" id="editPanel">
+                <div class="slds-grid slds-page-header__detail-row">
+                    <div class="slds-col--padded slds-size--1-of-6" />
+                     
+                    <div class="slds-col--padded slds-size--2-of-6">
+                        <dl>
+                            <dt>
+                                <p class="strong">Account Name</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.Name}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Phone</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.Phone}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Website</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.Website}" />
+                            </dd>
+                        </dl>
+                    </div>
+                     
+                    <div class="slds-col--padded slds-size--2-of-6">
+                        <dl>
+                            <dt>
+                                <p class="strong">Rating</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.Rating}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Fax</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.Fax}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">AccountNumber</p>
+                            </dt>
+                            <dd>
+                                <apex:inputField styleClass="slds-input" value="{!acc.AccountNumber}" />
+                            </dd>
+                        </dl>
+                    </div>
+                     
+                    <div class="slds-col--padded slds-size--1-of-6" />
+                </div>
+            </apex:outputPanel>
+            <!-- / PAGE HEADER DETAIL ROW -->
+             
+            <!-- PAGE HEADER DETAIL ROW (READONLY MODE)-->
+            <apex:outputPanel rendered="{!readOnly}" id="viewPanel">
+                 
+                <div class="slds-grid slds-page-header__detail-row">
+                    <div class="slds-col--padded slds-size--1-of-6" />
+                     
+                    <div class="slds-col--padded slds-size--2-of-6">
+                        <dl>
+                            <dt>
+                                <p class="strong">Account Name</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.Name}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Phone</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.Phone}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Website</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.Website}" />
+                            </dd>
+                        </dl>
+                    </div>
+                     
+                    <div class="slds-col--padded slds-size--2-of-6">
+                        <dl>
+                            <dt>
+                                <p class="strong">Rating</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.Rating}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">Fax</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.Fax}" />
+                            </dd>
+                        </dl>
+                        <br/>
+                        <dl>
+                            <dt>
+                                <p class="strong">AccountNumber</p>
+                            </dt>
+                            <dd>
+                                <apex:outputText styleClass="slds-text-heading--small" value="{!acc.AccountNumber}" />
+                            </dd>
+                        </dl>
+                    </div>
+                     
+                    <div class="slds-col--padded slds-size--1-of-6" />
+                </div>
+                 
+            </apex:outputPanel>
+            <!-- / PAGE HEADER DETAIL ROW (READONLY MODE)-->
+             
+            <div class="slds-grid slds-page-header__detail-row ">
+                <div class="slds-col--padded slds-size--1-of-6" />
+                <div class="slds-col--padded slds-size--4-of-6">
+                    <dl>
+                        <dd>
+                            <apex:outputPanel rendered="{!!readOnly}">
+                                <div class="slds-modal__footer">
+                                    <apex:commandButton value="Create Account" styleClass="slds-button slds-button--brand slds-m-top--medium" action="{!createAccount}" />
+                                </div>
+                            </apex:outputPanel>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="slds-col--padded slds-size--1-of-6" />
+            </div>
+             
+        </div>
+        <!-- / REQUIRED SLDS WRAPPER -->
+    </apex:form>
+</apex:page>
